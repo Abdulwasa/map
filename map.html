@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author">
+  <meta name="author" content="">
+  <meta name="application-name" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> the way to my neighborhood</title>
+  <link rel="stylesheet" href="font-awesome-4.7.0 2/css/font-awesome.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+      <nav class="menu" data-bind="click: change" data-bind="class: multiple">
+          <span class="menuItem" data-bind="class: transform"></span>
+      </nav>
+
+  <header class="output" data-bind="class: single">
+      <input type="text" placeholder="search your Location" type="search" data-bind="textInput: query, event: {keyup: textInput}" autocomplete="on"  />
+          <i class="fa fa-filter fa-2x fa-pull-right">filter</i>
+
+       <div id="names" data-bind = "foreach: listItem">
+          <p  data-bind = "text: name, click: $parent.nameEvent"></p>
+      </div>
+  </header>
+
+  <div id="map"></div>
+
+  <script src="js/knockout-3.4.2.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/map.js"></script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPC3VAQ6E7QmonGpz6-8yqs5kCIN5tmaQ&libraries=places&callback=initMap" onerror="googleError()"></script>
+
+</body>
+</html>
